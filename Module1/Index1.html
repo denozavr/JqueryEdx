@@ -6,13 +6,40 @@
 </head>
 <body>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+
+<style>
+    [title="mu"] {
+        color: blueviolet;
+    }
+
+    [href*="ya"] {
+        font-size: 2em;
+    }
+
+</style>
 <script>
     $(function() {
         //this code will execute when page loaded
         $('h1').text('jQuery');
+        $('h1.demo').text('jQuery select with class');
+
+        $('#high-div1').click(function() {
+            //resetHtml();
+            $('#div1').addClass('highlight');
+            //displayHtml();
+        });
+
+        $('[title="mu"]').text('I replace you');
+        $('[href*="ya"]').text('Yandex site');
+
     });
    
 </script>
     <h1>Hi man</h1>
+<h1 class="demo">Hi man with class</h1>
+
+<div title="mu" id="div1"> try to higlight me </div> <br/>
+<a href="http://ya.ru">Yandex </a> <br />
+    <button id="high-div1">Make div yellow</button>
 </body>
 </html>
