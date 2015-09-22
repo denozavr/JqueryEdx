@@ -45,8 +45,24 @@
 <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
 
 <script>
+    $(function() {
+        $('.rating-circle').hover(function () {
+            $(this)
+                .toggleClass("rating-hover")
+                .prevAll()
+                .stop(true, true).toggleClass("rating-hover");
+        });
+
+
+        $('.rating-circle').click(function () {
+            $(this)
+                .toggleClass("rating-chosen")
+                .prevAll()
+                .stop(true, true).toggleClass("rating-chosen");
+        });
+    });
     // your answer would go here
-    
+
 </script>
 </body>
 </html>
