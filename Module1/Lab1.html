@@ -49,16 +49,16 @@
         $('.rating-circle').hover(function () {
             $(this)
                 .toggleClass("rating-hover")
-                .prevAll()
-                .stop(true, true).toggleClass("rating-hover");
+                .prevAll().toggleClass("rating-hover");
         });
 
 
         $('.rating-circle').click(function () {
             $(this)
                 .toggleClass("rating-chosen")
-                .prevAll()
-                .stop(true, true).toggleClass("rating-chosen");
+                .prevAll().addClass("rating-chosen");
+            $(this).addClass("rating-chosen").nextAll().removeClass("rating-chosen");
+
         });
     });
     // your answer would go here
