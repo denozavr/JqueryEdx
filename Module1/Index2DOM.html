@@ -15,8 +15,10 @@
 <script>
     $(function () {
         //childeren doesn't need selector, BUT FIND DOES
-        $('#target').children().attr("style", "color:blue; font-size: 2em;");
+        //$('#target').children().attr("style", "color:blue; font-size: 2em;");
         
+        //'*' means find EVERYTHING
+        $('#target').find('*').attr("style", "color:blue; font-size: 2em;");
     });
     
 </script>
