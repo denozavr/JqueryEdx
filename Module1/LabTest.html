@@ -1,0 +1,83 @@
+﻿<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        body {
+            font-family: Verdana;
+        }
+
+        h1, h2, h3 {
+            color: darkblue;
+        }
+
+        .rating-circle {
+            height: 2em;
+            width: 2em;
+            border: .1em solid black;
+            border-radius: 1.1em;
+            display: inline-block;
+            margin: 0;
+            padding: .1em;
+        }
+
+        .rating-hover {
+            background-color: yellow;
+        }
+
+        .rating-chosen {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contoso Web Developer Conference</h1>
+    <h2>Finding elements using jQuery</h2>
+    <div>This session is about identifying elements using jQuery methods and selectors.</div>
+    <h3>Rate this session</h3>
+    <div id="rating-container">
+        <div class="rating-circle"></div>
+        <div class="rating-circle"></div>
+        <div class="rating-circle"></div>
+        <div class="rating-circle"></div>
+        <div class="rating-circle"></div>
+    </div>
+
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+
+    <script>
+
+        // your answer would go here
+        $(function () {
+            // ischecked will be used to stop the highlighting of circles once it has been clicked on
+            var ischecked = false;
+
+            $('.rating-circle').hover(function () {
+                // Get the circle the user has moved thier mouse over
+                ischecked = false;
+                var index = $(this).index();
+                // Add the "rating-hover" class to that circle and all of the ones to the left
+                if (!ischecked) {
+                    $('.rating-circle').slice(0, index + 1).addClass('rating-hover');
+                }
+            });
+
+            $('.rating-circle').mouseleave(function () {
+                // If the user moves their mouse off the circles, remove the "rating-hover" class
+                $('.rating-circle').removeClass('rating-hover');
+            });
+
+            $('.rating-circle').click(function () {
+                // Get the circle the user has moved thier mouse over
+                var index = $(this).index();
+                // Add the "rating-hover" class to that circle and all of the ones to the left
+                if (!ischecked) {
+                    $('.rating-circle').slice(0, index + 1).addClass('rating-chosen');
+                }
+                ischecked = true;
+            });
+        });
+
+        // your answer would go here
+    </script>
+</body>
+</html>
