@@ -2,45 +2,60 @@
 <html>
 <head>
     <title>Jquery hello</title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
 </head>
 <body>
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
 
-<style>
-    
-    div {
-        margin-top: .2em;
-    }
-    #target {
-        font-weight: 800;
-    }
-</style>
-<script>
-    $(function () {
-        //$('#target').prev().attr('style', 'color: red');
+    <style>
+        div {
+            margin-top: .2em;
+        }
 
-        //$('#target').prevAll().attr('style', 'color: red');
+        #target {
+            font-weight: 800;
+        }
+    </style>
+    <script>
+        $(function () {
+            //$('#target').prev().attr('style', 'color: red');
 
-        //PREV UNTIL element with stop class
-        //$('#target').prevUntil('.stop').attr('style', 'color:red');
+            //$('#target').prevAll().attr('style', 'color: red');
+
+            //PREV UNTIL element with stop class
+            //$('#target').prevUntil('.stop').attr('style', 'color:red');
 
 
-        //$('#target').next().attr('style', 'color: red');
+            //$('#target').next().attr('style', 'color: red');
 
-        //$('#target').nextAll().attr('style', 'color: red');
+            //$('#target').nextAll().attr('style', 'color: red');
 
-        //Next UNTIL element with stop class
-        $('#target').nextUntil('.last').attr('style', 'color:red');
-    });
-    
-</script>
-    <div style="color: black;" class="stop">Item 1</div>
-    <div style="color: black;">Item 2</div>
-    <div style="color: black;">Item 3</div>
-    <div style="color: black;" id="target">Item 4</div>
-    <div style="color: black;">Item 5</div>
-    <div style="color: black;" class="last">Item 6</div>
+            //Next UNTIL element with stop class
+            //$('#target').nextUntil('.last').attr('style', 'color:red');
+
+
+            //INDEX IS 0-BASED
+            var element = $('#target');
+            var container = $('#container');
+
+            var index = container.children().index(element);
+
+            $('#display').text('The index of element is ' + index);
+        });
+
+    </script>
+    <div id="container">
+        <div style="color: black;" class="stop">Item 1</div>
+        <div style="color: black;">Item 2</div>
+        <div style="color: black;">Item 3</div>
+        <div style="color: black;" id="target">Item 4</div>
+        <div style="color: black;">Item 5</div>
+        <div style="color: black;" class="last">Item 6</div>
+    </div>
+
+    <div id="display">
+
+    </div>
 
 </body>
 </html>
