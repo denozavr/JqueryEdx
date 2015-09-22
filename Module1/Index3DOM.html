@@ -20,11 +20,14 @@
     $(function () {
         //$('#target').prev().attr('style', 'color: red');
 
-        $('#target').prevAll().attr('style', 'color: red');
+        //$('#target').prevAll().attr('style', 'color: red');
+
+        //PREV UNTIL element with stop class
+        $('#target').prevUntil('.stop').attr('style', 'color:red');
     });
     
 </script>
-    <div style="color: black;">Item 1</div>
+    <div style="color: black;" class="stop">Item 1</div>
     <div style="color: black;">Item 2</div>
     <div style="color: black;">Item 3</div>
     <div style="color: black;" id="target">Item 4</div>
