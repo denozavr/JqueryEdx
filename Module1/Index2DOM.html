@@ -13,18 +13,20 @@
 
 </style>
 <script>
-    $(function() {
-        $('#target').attr("style", "color:blue; font-size: 2em;");
+    $(function () {
+        //childeren doesn't need selector, BUT FIND DOES
+        $('#target').children().attr("style", "color:blue; font-size: 2em;");
+        
     });
     
 </script>
 
-    <div id="target">
+    <div id="target" style="color: black"> 
         GrandPar
-        <div class="parent">
+        <div style="color: black" class="parent">
             Parent
-            <div class="child">1st child</div>
-            <div class="child">2nd child</div>
+            <div style="color: black" class="child">1st child</div>
+            <div style="color: black" class="child">2nd child</div>
         </div>
     </div>
 
