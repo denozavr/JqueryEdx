@@ -18,7 +18,10 @@
         //$('#target').children().attr("style", "color:blue; font-size: 2em;");
         
         //'*' means find EVERYTHING
-        $('#target').find('*').attr("style", "color:blue; font-size: 2em;");
+        // $('#target').find('*').attr("style", "color:blue; font-size: 2em;");
+
+        //LOOKS UP
+        $('#demo').parent().attr("style", "color:blue; ");s
     });
     
 </script>
@@ -28,7 +31,7 @@
         <div style="color: black" class="parent">
             Parent
             <div style="color: black" class="child">1st child</div>
-            <div style="color: black" class="child">2nd child</div>
+            <div style="color: black" class="child" id="demo">2nd child</div>
         </div>
     </div>
 
