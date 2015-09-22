@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Index2DOM.html" />
     <Content Include="Index1.html" />
     <Content Include="Lab1.html" />
     <Content Include="packages.config" />
