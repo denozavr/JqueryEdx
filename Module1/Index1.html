@@ -31,12 +31,17 @@
 
         $('[title="mu"]').text('I replace you');
         $('[href*="ya"]').text('Yandex site');
-
+        $('header>h2').text("parent header, H2 child");//header h2 descendant
     });
-   
+    
 </script>
+
     <h1>Hi man</h1>
 <h1 class="demo">Hi man with class</h1>
+
+    <header>
+        <h2>inside header h2</h2>
+    </header>
 
 <div title="mu" id="div1"> try to higlight me </div> <br/>
 <a href="http://ya.ru">Yandex </a> <br />
