@@ -2,14 +2,28 @@
 <html>
 <head>
     <title>Module 2</title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8"/>
+    <style>
+        span.message {
+            color: slateblue;
+        }
+    </style>
 </head>
 <body>
 <div id="target">Demo element</div>
 
 <div id="display"></div>
 
-    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+<br/>
+    <label>Name</label>
+    <input type="text" value="" />
+<span class="message">Please enter name</span>
+    <br />
+    <label>Email</label>
+    <input type="text" value="" />
+    <span class="message">Please enter email</span>
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
 <script>
     $(function() {
         $("#target").click(function(event) {
