@@ -36,6 +36,15 @@
             var output = 'User clicked in ' + event.pageX + '/' + event.pageY + ' point';
             $("#display").text(output);
         });
+
+        //show span when focus in input
+        $('input[type="text"]').focus(function() {
+            //convert this to jQuery object and find the next span
+            $(this).next('span').removeAttr('hidden');
+        }).blur(function () {
+            //delete help message when input lost focus
+            $('span.message').attr('hidden','hidden');
+        });
     });
 </script>
 </body>
