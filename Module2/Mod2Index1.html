@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Module 2</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+<div id="target">Demo element</div>
+
+<div id="display"></div>
+
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+<script>
+    $(function() {
+        $("#target").click(function(event) {
+            var output = 'User clicked in ' + event.pageX + '/' + event.pageY + ' point';
+            $("#display").text(output);
+        });
+    });
+</script>
+</body>
+</html>
