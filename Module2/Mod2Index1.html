@@ -53,6 +53,12 @@
         $('#name').val('Den');
         //put value from name input to email
         $('#email').val($('#name').val() + '@gmail.com');
+
+        //CSS
+        //if we use attr with style then we replace current styles
+        //to add new styles or update existing we must use CSS function
+        $('label[for="name"]').css('color', 'red');
+        $('label[for="name"]').css('text-decoration', 'underline');
     });
 </script>
 </body>
