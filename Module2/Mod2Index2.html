@@ -2,28 +2,61 @@
 <html>
 <head>
     <title>Module 2</title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <style>
-        
+        .btn {
+            font-size: 1em;
+        }
     </style>
 </head>
 <body>
 
     <form>
-        <button type="button" class="btn validate">First button</button>
-        <button type="button" class="btn validate">Secod button</button>
-        <button type="button" class="btn">3rd button</button>
+        <div>
+            <button type="button" class="btn validate">First button</button>
+        </div>
+        <div>
+            <button type="button" class="btn validate">Secod button</button>
+        </div>
+        <div>
+            <button type="button" class="btn">Third button</button>
+        </div>
     </form>
 
+    <div id="display"></div>
+    <br /><br /><br />
 
-<div id="display"></div>
+    <form>
+        <div><button type="button" class="btn" id="creator">Create new button</button></div>
+        <div><button type="button" class="btn updater">button</button></div>
+        <div id="target"></div>
+    </form>
+
+    <div id="display2"></div>
+
 
 
 <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
-<script>
-    $(function() {
-        
-    });
-</script>
+    <script>
+        $(function () {
+            //ON
+            $('form').on('click mouseenter', 'button.validate', function () {
+                $('#display').text('Clicked or mouse!!!');
+            });
+
+
+            $('#creator').click(function() {
+                $('#target').html('<button type="button" class="btn updater" >New button</button>');
+            });
+            //THIS WON'T WORK WITH DYNAMICALLY ADDED BUTTON
+            $('button.updater').click(function() {
+                $('#display2').text($(this).text() + ' was clicked!');
+            });
+            //TO WORK WITH NEW DYNAMICALLY ADDED BUTTON WE NEED TO USE DELEGATE OR ON(WITH DOCUMENT)
+            $(document).on('click', 'button', function() {
+                $('#display2').text($(this).text() + ' was clicked!');
+            });
+        });
+    </script>
 </body>
 </html>
