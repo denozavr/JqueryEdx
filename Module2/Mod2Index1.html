@@ -31,20 +31,28 @@
 
 <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
 <script>
-    $(function() {
+    $(function () {
+        //CLICK AND EVENT PROPERTIES
         $("#target").click(function(event) {
             var output = 'User clicked in ' + event.pageX + '/' + event.pageY + ' point';
             $("#display").text(output);
         });
 
+        //FOCUS & BLUR
         //show span when focus in input
         $('input[type="text"]').focus(function() {
             //convert this to jQuery object and find the next span
             $(this).next('span').removeAttr('hidden');
         }).blur(function () {
             //delete help message when input lost focus
-            $('span.message').attr('hidden','hidden');
+            $('span.message').attr('hidden', 'hidden');
         });
+
+        //VAL
+        //use Val to set default values
+        $('#name').val('Den');
+        //put value from name input to email
+        $('#email').val($('#name').val() + '@gmail.com');
     });
 </script>
 </body>
