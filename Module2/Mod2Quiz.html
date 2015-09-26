@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Module 2 QUIZ</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <div id="parent">
+        <div class="sample">Text</div>
+        <div class="demo">Text</div>
+        <div id="target">Text</div>
+        <div class="demo">Text</div>
+    </div>
+
+
+
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+    <script>
+        $(function () {
+            //1
+            $('#target').after('<section>New element</section>');
+
+            //2
+            $('#parent').children().wrapAll('<section></section>');
+
+            //3
+            $('#target').append('<section>New element</section>');
+        });
+    </script>
+</body>
+</html>
