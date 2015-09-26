@@ -18,7 +18,13 @@
 </head>
 <body>
 
-    <div><button id="target" type="button" class="btn">Execute!!</button></div>
+    <div>
+        <button id="target" type="button" class="btn">Execute!!</button>
+        <button id="wrap1" type="button" class="btn">Wrap</button>
+        <button id="wrap2" type="button" class="btn">Wrap all</button>
+        <button id="wrap3" type="button" class="btn">Wrap inner</button>
+    </div>
+
 
     <div id="display" class="r">
         <div>This content was already here</div>
@@ -30,7 +36,7 @@
     <script>
         $(function () {
 
-            $('#target').click(function() {
+            $('#target').one('click', function () {
 
                 //Appen and prepend add content inside the parent div(display)
                 $('#display').prepend('<div>This is the beginning inside</div>');
@@ -40,6 +46,19 @@
                 //After and before add HTML after and before element NOT INSIDE(like append and prepend)
                 $('#display').before('<div>This is the beginning OUT</div>');
                 $('#display').after('<div>This is the end OUT</div>');
+            });
+
+
+            $('#wrap1').one('click', function () {
+                $('#display>div').wrap('<em></em>');
+            });
+
+            $('#wrap2').one('click', function () {
+                $('#display>div').wrapAll('<em></em>');
+            });
+
+            $('#wrap3').one('click', function () {
+                $('#display>div').wrapInner('<em></em>');
             });
 
         });
