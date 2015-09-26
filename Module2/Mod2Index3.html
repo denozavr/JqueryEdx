@@ -11,6 +11,9 @@
         div {
             margin-top: 1em;
         }
+        .r {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -26,7 +29,10 @@
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
-           
+            //Appen and prepend add content inside the parent div(display)
+            $('#display').prepend('<div>This is the beginning</div>');
+
+            $('#display').append('<div class="r">This is the end</div>');
         });
     </script>
 </body>
