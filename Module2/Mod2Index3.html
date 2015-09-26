@@ -33,12 +33,12 @@
             $('#target').click(function() {
 
                 //Appen and prepend add content inside the parent div(display)
-                $('#display').prepend('This is the beginning inside');
+                $('#display').prepend('<div>This is the beginning inside</div>');
                 $('#display').append('<div>This is the end inside</div>');
 
 
                 //After and before add HTML after and before element NOT INSIDE(like append and prepend)
-                $('#display').before('This is the beginning OUT');
+                $('#display').before('<div>This is the beginning OUT</div>');
                 $('#display').after('<div>This is the end OUT</div>');
             });
 
