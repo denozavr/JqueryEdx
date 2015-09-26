@@ -52,10 +52,16 @@
             $('button.updater').click(function() {
                 $('#display2').text($(this).text() + ' was clicked!');
             });
-            //TO WORK WITH NEW DYNAMICALLY ADDED BUTTON WE NEED TO USE DELEGATE OR ON(WITH DOCUMENT)
-            $(document).on('click', 'button', function() {
+            //TO WORK WITH NEW DYNAMICALLY ADDED BUTTON WE NEED TO USE DELEGATE OR ON WITH parent (DOCUMENT)
+            $(document).on('click', 'button.updater', function() {
                 $('#display2').text($(this).text() + ' was clicked!');
             });
+
+
+            //ONE event exucuted only once
+            $('#creator').one('dblclick', (function() {
+                $('#display2').text("double click one on first button");
+            }));
         });
     </script>
 </body>
