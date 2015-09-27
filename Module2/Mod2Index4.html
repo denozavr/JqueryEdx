@@ -32,7 +32,10 @@
         $(function () {
             $('#executor').click(function () {
                 //Hide in 1000 ms(1 second)
-                $('#box').hide(1000);
+                //$('#box').hide(1000);
+
+                //toggle hide element when it is visible and show when it is invisible
+                $('#box').toggle(1000);
             });
 
         });
