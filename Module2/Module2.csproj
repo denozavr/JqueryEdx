@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="Mod2Index4.html" />
     <Content Include="Mod2Index3.html" />
     <Content Include="Mod2Index2.html" />
     <Content Include="Mod2Quiz.html" />

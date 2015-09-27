@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Module 2</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            font-size: 1.5em;
+        }
+
+       #box {
+           width: 5em;
+           height: 5em;
+           background-color: darkblue;
+           color: white;
+       }
+    </style>
+</head>
+<body>
+
+    <h2>Hide, show and toggle</h2>
+    <div><button id="executor" type="button" class="btn">Execute!!</button></div>
+
+    <div id="box">
+        <div>This content is demo</div>
+    </div>
+
+
+
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+    <script>
+        $(function () {
+            $('#executor').click(function () {
+                //Hide in 1000 ms(1 second)
+                $('#box').hide(1000);
+            });
+
+        });
+    </script>
+</body>
+</html>
