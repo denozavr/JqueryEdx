@@ -70,6 +70,7 @@
     <Content Include="Mod2Index4.html" />
     <Content Include="Mod2Index3.html" />
     <Content Include="Mod2Index2.html" />
+    <Content Include="Mod2Lab.html" />
     <Content Include="Mod2Quiz.html" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
