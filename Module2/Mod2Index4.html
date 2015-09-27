@@ -14,6 +14,9 @@
            background-color: darkblue;
            color: white;
        }
+       .hidden {
+           display: none;
+       }
     </style>
 </head>
 <body>
@@ -25,9 +28,16 @@
         <div>This content is demo</div>
     </div>
 
+    <button type="button" id="show-additional-information">
+        Show additional information
+    </button>
+    <div id="additional-information" class="hidden">
+        <label>Additional information:</label>
+        <input type="text" />
+    </div>
 
 
-    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
             $('#executor').click(function () {
@@ -36,6 +46,12 @@
 
                 //toggle hide element when it is visible and show when it is invisible
                 $('#box').toggle(1000);
+                
+            });
+
+            $('#show-additional-information').click(function () {
+                //if you don't want any animation, pass 0 in hide,show, toggle like hide(0)
+                $('#additional-information').show(0);
             });
 
         });
