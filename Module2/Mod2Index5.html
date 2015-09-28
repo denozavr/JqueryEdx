@@ -7,25 +7,43 @@
         body {
             font-size: 1.5em;
         }
+
         .red {
             color: red;
         }
-     
     </style>
 </head>
 <body>
     <h2>replace </h2>
     <div>
         <button id="executor" type="button" class="btn">Execute!!</button>
+        <button id="executorClone" type="button" class="btn">Execute Clone!!</button>
     </div>
 
     <div id="target">First line</div>
 
-<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+    <div id="dialog">Second line</div>
+
+    <div id="container">
+
+    </div>
+
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
-            $('#executor').click(function() {
+            $('#executor').click(function () {
                 $('#target').replaceWith('<div id="target" class="red">New content</div>');
+            });
+
+            //put dialog div clone in the variable
+            var $dialog = $('#dialog').clone();
+            //remove id
+            $dialog.removeAttr('id');
+
+            //clone #dialog to #container 
+            $('#executorClone').click(function () {
+                //each time we need new item we must clone it again
+                $('#container').append($dialog.clone().fadeIn(1000));
             });
 
         });
