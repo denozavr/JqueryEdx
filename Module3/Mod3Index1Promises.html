@@ -38,7 +38,8 @@
     $(function () {
         $('#executor').click(function () {
             //hide runs async, so next line will execute immediately
-            $('.box').hide(1000).promise().done(function() {
+            $('.box').hide(1000).promise().done(function () {
+                // this code run after hide is complete
                 $('#output').text('Box is hidden now');
             });
 
