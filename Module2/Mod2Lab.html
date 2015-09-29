@@ -59,6 +59,7 @@
 
             //read attribut for max-value
             var maxVal = $('#rating-container').attr('max-value');
+            //add initial 5 circles on page
             addCircles(maxVal);
 
             $('#update-max-value').click(function () {
@@ -74,7 +75,7 @@
             });
 
             $('#rating-container').on('mouseleave', '.rating-circle', function() {
-                $(this).removeClass('rating-hover').prevAll().removeClass('rating-hover');
+                $('.rating-circle').removeClass('rating-hover');
                 $('[rate="yes"]').addClass('rating-chosen').prevAll().addClass('rating-chosen');
             });
 
