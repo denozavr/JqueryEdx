@@ -41,6 +41,8 @@
             $('.box').hide(1000).promise().done(function () {
                 // this code run after hide is complete
                 $('#output').text('Box is hidden now');
+            }).fail(function() {
+                $('#output').text('Box hide isn\'t working correctly');
             });
 
         });
