@@ -8,7 +8,7 @@
             font-size: 1.5em;
         }
 
-        #box {
+        .box {
             width: 5em;
             height: 5em;
             background-color: darkblue;
@@ -36,7 +36,13 @@
 <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
 <script>
     $(function () {
-        
+        $('#executor').click(function () {
+            //hide runs async, so next line will execute immediately
+            $('.box').hide(1000).promise().done(function() {
+                $('#output').text('Box is hidden now');
+            });
+
+        });
     });
 </script>
 </body>
