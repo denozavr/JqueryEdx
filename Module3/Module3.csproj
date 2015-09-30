@@ -66,6 +66,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Mod3LabTest.html" />
+    <Content Include="Mod3Quiz.html" />
+    <Content Include="Mod3Lab.html" />
+    <Content Include="Mod3Index3.html" />
+    <Content Include="Mod3Index2.html" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
