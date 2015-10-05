@@ -52,6 +52,22 @@
     <script>
         $(function () {
 
+            $('#save-rating').click(function() {
+
+                var person = { value: 4, maxValue: 5 };
+
+                
+                $.post('http://jquery-edx.azurewebsites.net/api/Rating', // Pass in the URL you need to access
+                    person).done( // Pass in the data to send via POST
+                    function (data) {
+                        $('#output').text(data.message);
+                    }
+                );
+
+            });
+
+           
+
             var addCircles = function (maxVal) {
                 //delete previous circles, otherwise we not replace, but add initial 5 with 10
                 $('.rating-circle').replaceWith('');
