@@ -1,10 +1,99 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<html>
 <head>
-    <title></title>
-	<meta charset="utf-8" />
+    <title>Mod 3 Lab</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        body {
+            font-family: Verdana;
+        }
+
+        h1, h2, h3 {
+            color: darkblue;
+        }
+
+        .rating-circle {
+            height: 2em;
+            width: 2em;
+            border: .1em solid black;
+            border-radius: 1.1em;
+            display: inline-block;
+            margin: 0;
+            padding: .1em;
+        }
+
+        .rating-hover {
+            background-color: yellow;
+        }
+
+        .rating-chosen {
+            background-color: green;
+        }
+    </style>
 </head>
 <body>
+    <h1>Contoso Web Developer Conference</h1>
+    <h2>Finding elements using jQuery</h2>
+    <div>This session is about identifying elements using jQuery methods and selectors.</div>
+    <h3>Rate this session</h3>
+    <div id="rating-container" max-value="5">
+    </div>
 
+<div>
+    <label for="max-value">Enter max value:</label>
+    <input type="text" id="max-value"/>
+    <button type="button" id="update-max-value">Update max value</button>
+</div>
+
+    <button type="button" id="save-rating">Save rating</button>
+    <div id="output"></div>
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+
+    <script>
+        $(function () {
+
+            var addCircles = function (maxVal) {
+                //delete previous circles, otherwise we not replace, but add initial 5 with 10
+                $('.rating-circle').replaceWith('');
+
+                for (var i = 0; i < maxVal; i++) {
+                    $('#rating-container').append('<div class="rating-circle"></div>');
+                }
+            };
+
+            //read attribut for max-value
+            var maxVal = $('#rating-container').attr('max-value');
+            //add initial 5 circles on page
+            addCircles(maxVal);
+
+            $('#update-max-value').click(function () {
+                //read value in textbox
+                var inputVal = $('#max-value').val();
+                addCircles(inputVal);
+            });
+
+
+            $('#rating-container').on('mouseenter', '.rating-circle', function () {
+                $(this).addClass('rating-hover').prevAll().addClass('rating-hover');
+                $('.rating-circle').removeClass('rating-chosen');
+            });
+
+            $('#rating-container').on('mouseleave', '.rating-circle', function() {
+                $('.rating-circle').removeClass('rating-hover');
+                $('[rate="yes"]').addClass('rating-chosen').prevAll().addClass('rating-chosen');
+            });
+
+            $('#rating-container').on('click', '.rating-circle', function() {
+                $(this).addClass('rating-chosen').prevAll().addClass('rating-chosen');
+                //first delete previous custom attr from click event if they exist, otherwise will be multiple circles with the same attribute
+                //add custom rate attribute with value "yes" for circle where was last click
+                $('.rating-circle').removeAttr('rate');
+                $(this).attr('rate', 'yes');
+                //if we reduce rating, from 5 to 2, then we must delete green color from right circles
+                $(this).addClass('rating-chosen').nextAll().removeClass('rating-chosen');
+            });
+
+        });
+    </script>
 </body>
 </html>
