@@ -54,7 +54,14 @@
 
             $('#save-rating').click(function() {
 
-                var person = { value: 4, maxValue: 5 };
+                var currentElement = $('.rating-circle[rate="yes"]');
+                var parent = $('#rating-container');
+                var indexValChosen = parent.children().index(currentElement)+1;
+
+                var currentElement2 = $('.rating-circle').last();
+                var all = parent.children().index(currentElement2) + 1;
+                
+                var person = { value: indexValChosen, maxValue: all };
 
                 
                 $.post('http://jquery-edx.azurewebsites.net/api/Rating', // Pass in the URL you need to access
