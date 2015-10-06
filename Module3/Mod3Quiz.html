@@ -6,5 +6,36 @@
 </head>
 <body>
 
+    <div id="target">
+        <section>
+            <div>Full name</div>
+            <input type="text" id="full-name" />
+        </section>
+    </div>
+
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+<script>
+    $(function() {
+        $('section > div').html('<label for="full-name">Full name</label>');
+    });
+
+    //answers
+    //1
+    // $('#target').html('<div>Full name</div>'); 
+
+    //2
+    //$('#target').append('<input type="text" id="full-name" />'); 
+
+
+    //3
+    //$('#target').children().wrapAll('<section></section>'); 
+
+    //4
+    // $('section > div').replaceWith('<label for="full-name">Full name</label>'); 
+
+    //5
+    // $('section input').addClass('form-control'); 
+
+</script>
 </body>
 </html>
